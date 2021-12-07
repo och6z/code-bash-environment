@@ -1,5 +1,12 @@
 ARG VARIANT=stable-slim
-FROM docker.io/library/debian:${VARIANT}
+FROM docker.io/library/golang:alpine AS build
+
+RUN apk update \
+    && apk add --no-cache shfmt
+
+FROM docker.io/library/debian:$VARIANT
+
+COPY --from=build /usr/bin/shfmt /usr/local/bin/
 
 ARG USERNAME=vscode
 ARG USER_UID=1000
