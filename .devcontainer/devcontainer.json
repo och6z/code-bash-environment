@@ -19,9 +19,9 @@
 		"[shellscript]": {
 			"editor.defaultFormatter": "foxundermoon.shell-format",
 			"editor.formatOnSave": true,
-			"editor.formatOnPaste": false,
+			"editor.formatOnPaste": false
 		},
-		"shellformat.flag": "-s -i 2 -ci -sr",
+		"shellformat.flag": "-s -i 2 -ci -sr"
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
@@ -30,7 +30,7 @@
 		"foxundermoon.shell-format",
 		"remisa.shellman",
 		"rogalmic.bash-debug",
-		"timonwong.shellcheck",
+		"timonwong.shellcheck"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
