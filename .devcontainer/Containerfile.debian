@@ -8,18 +8,19 @@ FROM docker.io/library/debian:$VARIANT
 
 COPY --from=build /usr/bin/shfmt /usr/local/bin/
 
+RUN apt-get update \
+    && apt-get install --no-install-recommends --assume-yes \
+    sudo \
+    procps \
+    && apt-get clean && rm -fr /var/lib/apt/lists/*
+
 ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
 RUN groupadd --gid $USER_GID $USERNAME \
     && useradd --gid $USER_GID \
+    --groups sudo \
     --create-home $USERNAME \
     --shell /bin/bash \
     --uid $USER_UID
-
-RUN apt-get update \
-    && apt-get install --no-install-recommends --assume-yes \
-    sudo \
-    procps \
-    && apt-get clean && rm -fr /var/lib/apt/lists/*
