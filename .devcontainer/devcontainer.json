@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.205.2/containers/debian
 {
-	"name": "bash-debian",
+	"name": "bash-dev",
 	"build": {
 		"dockerfile": "Containerfile.debian",
 		// Update 'VARIANT' to pick an Debian version: bullseye, buster, stretch
@@ -48,6 +48,6 @@
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,Z",
 	"workspaceFolder": "/workspace",
 
-	"runArgs": ["--userns=keep-id"],
+	"runArgs": ["--userns=keep-id", "--name=bash-dev"],
 	"containerUser": "vscode"
 }
