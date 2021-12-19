@@ -24,3 +24,8 @@ RUN groupadd --gid $USER_GID $USERNAME \
     --uid $USER_UID \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
+
+COPY build_ubuntu.sh /tmp/
+
+ARG BASHDB_VERSION=5.0-1.1.2
+RUN /bin/bash /tmp/build_ubuntu.sh $BASHDB_VERSION
