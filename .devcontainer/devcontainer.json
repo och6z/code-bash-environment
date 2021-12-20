@@ -4,7 +4,9 @@
 		// "dockerfile": "Containerfile.debian",
 		// "args": { "VARIANT": "stable-slim" }
 		"dockerfile": "Containerfile.ubuntu",
-		"args": { "VARIANT": "latest" }
+		"args": { "VARIANT": "latest",
+			"BASHDB_VERSION": "5.0-1.1.2"
+		}
 	},
 
 	// Set *default* container specific settings.json values on container create.
