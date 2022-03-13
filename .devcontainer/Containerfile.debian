@@ -13,10 +13,9 @@ RUN apt-get update \
     sudo \
     locales \
     procps \
+    && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
+    && locale-gen \
     && apt-get clean && rm -fr /var/lib/apt/lists/*
-
-RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
-    && locale-gen
 
 ARG USERNAME=vscode
 ARG USER_UID=1000
