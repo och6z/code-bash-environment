@@ -5,10 +5,10 @@
 		// "args": { "VARIANT": "stable-slim" }
 		"dockerfile": "Containerfile.ubuntu",
 		"args": {
-			"VARIANT": "latest",
-			"USERNAME": "vscode",
+			"BASHDB_VERSION": "5.0-1.1.2",
 			"USER_UID": "1000",
-			"BASHDB_VERSION": "5.0-1.1.2"
+			"USERNAME": "vscode",
+			"VARIANT": "latest"
 		}
 	},
 
