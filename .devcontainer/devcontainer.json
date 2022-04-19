@@ -2,12 +2,12 @@
 	"name": "bash-dev",
 	"build": {
 		// "dockerfile": "Containerfile.debian",
-		// "args": { "VARIANT": "stable-slim" }
 		"dockerfile": "Containerfile.ubuntu",
 		"args": {
 			"BASHDB_VERSION": "5.0-1.1.2",
 			"USER_UID": "1000",
 			"USERNAME": "vscode",
+			// "VARIANT": "stable-slim",
 			"VARIANT": "latest"
 		}
 	},
